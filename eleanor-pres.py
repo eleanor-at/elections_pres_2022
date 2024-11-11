@@ -41,6 +41,27 @@ df_depart
 
 #on veut obtenir le département qui a le plus voté pour chacun des
 #candidats proportionnellemnt au nombre de votants
-dic_max = {f'depart_max_candidat{i}' : int(df_depart[f'%Voix/Ins {i}'].idxmax())
+dic_max_depart = {f'depart_max_candidat{i}' : int(df_depart[f'Voix/Ins 11 {i}'].idxmax())
 for i in range(1,13)}
-print(dic_max)
+print(dic_max_depart)
+
+#on obtient la meme chose mais par commune
+dic_max_commmune  = {f'commune_max_candidat{i}' : int(df[f'% Voix/Ins {i}'].idxmax())
+                     for i in range(1,13)}
+print(dic_max_commmune)
+
+
+# +
+#on crée un dictionnaire avec l'orientation politique des candidats
+candidats_sup = np.array([df[f'Nom {i}'].unique() for i in range(2,13)])
+candidats = np.append(candidats_sup, np.array(df['Nom1'].unique())) #on a la liste des candidats
+#il y avait un problème dans le nom de la première colonne, oubli d'espace
+
+dic_candidats = {'ROUSSEL' : 'gauche', 'MACRON' : 'centre', 'LASSALLE' : 'droite',
+                 'LE PEN' : 'droite', 'ZEMMOUR' : 'droite', 'MÉLENCHON' : 'gauche',
+                 'HIDALGO' : 'gauche', 'JADOT' : 'gauche', 'PÉCRESSE' : 'droite',
+                 'POUTOU' : 'gauche', 'DUPONT-AIGNAN' : 'droite', 'ARTHAUD' : 'gauche'}
+
+# -
+
+
