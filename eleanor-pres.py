@@ -62,6 +62,19 @@ dic_candidats = {'ROUSSEL' : 'gauche', 'MACRON' : 'centre', 'LASSALLE' : 'droite
                  'HIDALGO' : 'gauche', 'JADOT' : 'gauche', 'PÉCRESSE' : 'droite',
                  'POUTOU' : 'gauche', 'DUPONT-AIGNAN' : 'droite', 'ARTHAUD' : 'gauche'}
 
+for i in range(2,13):
+    df[f'Orientation politique {i}'] = df[f'Nom {i}'].map(dic_candidats)
+
+df['Orientation politique 1'] = df['Nom1'].map(dic_candidats)
+df.columns
 # -
 
+#votes par département 
+for i in range(1,13):
+    print(df.groupby([f'Orientation politique {i}', 'Code du département'])[f'Voix {i}'].sum())
 
+df['Voix 1']
+
+
+
+df.head(10)
