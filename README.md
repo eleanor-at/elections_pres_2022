@@ -1,6 +1,6 @@
 # elections_pres_2022
 -  votes par département
--  liste des départements ayant le plus voté pour chaque candidat; idem avec communes
+-  liste des départements ayant le plus voté pour chaque candidat en pourcentage; idem avec communes
 -  nouvelles colonnes : gauche, droite, centre; régions
 -  votes par région
 -  dictionnaire regroupant les candidats selon orientation politique (gauche/droite/centre)
